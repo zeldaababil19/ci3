@@ -14,6 +14,9 @@
     <h1>
       <center>Product List</center>
     </h1>
+    <td>
+      <a href="<?php echo site_url ('product/add_new/');?>" class="btn btn-sm btn-success">Create</a>
+    </td>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -31,6 +34,12 @@
         <th scope="row"><?php echo $count;?></th>
         <td><?php echo $row->product_name;?></td>
         <td><?php echo number_format($row->product_price);?></td>
+        <td>
+          <a href="<?php echo site_url ('product/get_edit/'.$row-> product_id);?>"
+            class="btn btn-sm btn-info">Update</a>
+          <a href=" <?php echo site_url('product/delete/'.$row -> product_id);?>"
+            class="btn btn-sm btn-danger">Delete</a>
+        </td>
       </tr>
       <?php endforeach;?>
       </tbody>
